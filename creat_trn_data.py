@@ -69,7 +69,7 @@ matcher = Matcher(nlp.vocab)
 # Add the pattern to the matcher
 matcher.add("DRUG", None, pattern1)
 
-
+#################################################
 # Process texts and run the matcher
 for doc in nlp.pipe(randomTexts):
     matches = matcher(doc)
@@ -78,7 +78,7 @@ for doc in nlp.pipe(randomTexts):
         entType = nlp.vocab.strings[match_id]  # Get string representation
         span = doc[start:end]  # The matched span
         print(entType, span.text)
-
+##################################################
 
 TRAINING_DATA = []
 
