@@ -63,3 +63,14 @@ for itn in range(10):
 
 # try the model on some (~10 - 20) hard-coded texts that are not part of the training data,
 # but that you think the model should find. Display the results with displacy.
+
+'''
+[
+    ["How to preorder the iPhone X", { "entities": [[20, 28, "GADGET"]] }],
+    ["iPhone X is coming", { "entities": [[0, 8, "GADGET"]] }],
+    ["Should I pay $1,000 for the iPhone X?", { "entities": [[28, 36, "GADGET"]] }],
+    ["The iPhone 8 reviews are here", { "entities": [[4, 12, "GADGET"]] }],
+    ["Your iPhone goes up to 11 today", { "entities": [[5, 11, "GADGET"]] }],
+    ["I need a new phone! Any tips?", { "entities": [] }]
+]
+'''
