@@ -5,6 +5,7 @@ Description: Create training data for NER from reddit posts/comments using patte
 '''
 import spacy
 from spacy.matcher import Matcher
+from spacy.pipeline import EntityRuler
 import json
 import sys
 import random
@@ -53,6 +54,44 @@ nlp = spacy.load("en_core_web_sm")
 
 # link to commonly used drugs: https://www.drugabuse.gov/sites/default/files/Commonly-Used-Drugs-Charts_final_June_2020_optimized.pdf
 
+# Patterns
+ingredient_pattern = {
+    'label': 'DRUG',
+    'pattern': [
+        {
+            'LEMMA': { 'DR': ['alcohol', 'ayahuasca', 'cocaine', 'Dimethyltriptamine', 'DMT', 'Gamma-hydroxybutyrate', 'GHB', 'hallucinogens', 'Heroin', 'ketamine', 'khat', 'kratom', 'LSD', 'Marijuana', 'MDMA', 'peyote', 'methamphetamine', 'dextromethorphan', 'DXM', 'loperamide', 'PCP', 'opioids', 'psilocybin', 'flunitrazepam', 'rohypnol', 'salvia', 'anabolic', 'steroids', 'tabacco', 'nicotine'] },
+            'POS': 'NOUN'
+        }
+    ]
+}
+
+patterns = [ingredient_pattern]
+
+# Create an Entity Ruler and add patterns
+ruler = EntityRuler(nlp, overwrite_ents=True)
+ruler.add_patterns(patterns)
+
+# Add the Entity Ruler to the nlp pipeline
+nlp.add_pipe(ruler, after="ner")
+
+# Process texts with the Entity Ruler in the pipelne
+# Process the texts one at a time because if nlp.pipe(randomTexts) is used,
+# displacy doesn't work
+
+docs = []
+for text in randomTexts:
+    doc = nlp(text)
+    [print(ent.label_, ent.text) for ent in doc.ents if ent.label_ in ['DRUG']]
+
+    hasING = False
+    for ent in doc.ents:
+        if ent.label_ == 'DRUG':
+            hasING = True
+            break
+
+    if hasING:
+        docs.append(doc)
+'''
 # a pattern to match common drug names
 pattern1 = [
     {
@@ -64,7 +103,7 @@ pattern1 = [
 
 # create a Matcher
 matcher = Matcher(nlp.vocab, validate = True)
-#, validate=True)
+
 
 # Add the pattern to the matcher
 matcher.add("DRUG", None, pattern1)
@@ -78,7 +117,7 @@ for doc in nlp.pipe(randomTexts):
         entType = nlp.vocab.strings[match_id]  # Get string representation
         span = doc[start:end]  # The matched span
         print(entType, span.text)
-
+'''
 
 '''
 TRAINING_DATA = []
