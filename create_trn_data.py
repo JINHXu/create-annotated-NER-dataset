@@ -52,22 +52,47 @@ nlp = spacy.load("en_core_web_sm")
 # patterns to match more patterns tba
 ######################################################
 
-# link to commonly used drugs: https://www.drugabuse.gov/sites/default/files/Commonly-Used-Drugs-Charts_final_June_2020_optimized.pdf
-
 # a pattern to match common drug names
-pattern1 = [
+# link to commonly used drugs: https://www.drugabuse.gov/sites/default/files/Commonly-Used-Drugs-Charts_final_June_2020_optimized.pdf
+# list of common drug names all in lower case
+common_drug_names = ['alcohol', 'ayahuasca', 'cocaine', 'dimethyltriptamine', 'dmt', 'gamma-hydroxybutyrate', 'ghb', 'hallucinogens', 'heroin', 'ketamine', 'khat', 'kratom', 'lsd', 'marijuana',
+                     'mdma', 'peyote', 'methamphetamine', 'dextromethorphan', 'dxm', 'loperamide', 'pcp', 'opioids', 'psilocybin', 'flunitrazepam', 'rohypnol', 'salvia', 'anabolic', 'steroids', 'tabacco', 'nicotine']
+# upper and lower case are always not diffeerentiated in reddit posts/comments, for example, 'LSD' often show as 'lsd'
+# the pattern will match all drug names whose lower case form is in the list common_drug_names
+pattern0 = [
     {
-        'LEMMA': {'DRU': ['alcohol', 'ayahuasca', 'cocaine', 'Dimethyltriptamine', 'DMT', 'Gamma-hydroxybutyrate', 'GHB', 'hallucinogens', 'Heroin', 'ketamine', 'khat', 'kratom', 'LSD', 'Marijuana', 'MDMA', 'peyote', 'methamphetamine', 'dextromethorphan', 'DXM', 'loperamide', 'PCP', 'opioids', 'psilocybin', 'flunitrazepam', 'rohypnol', 'salvia', 'anabolic', 'steroids', 'tabacco', 'nicotine']},
+        'LOWER': {'IN': common_drug_names},
         'POS': 'NOUN'
     }
 ]
 
+'''
+# unlike ingredients, drug entities rarely show in NOUN-NOUN or ADJ-NOUN pairs, most drug names are single-token, i.e. rarely any durg name is a phrase, for example there is no "heroin cocaine"
+# though some street names of drugs may appear as phrase such as "Vitamine K"
+
+
+# vatamine k, lady k, special k
+pattern1 = [{"LOWER": {'IN': ["vitamine", "lady", "special"]}, 'POS': 'NOUN'}, {"LOWER": "k"}]
+# laughing gas
+pattern2 = [{"LOWER": "laughing"}, {"LOWER": "gas"}]
+# Cat Valium
+pattern3 = [{"LOWER": "cat"}, {"LOWER": "valium"}]
+# Date Rape Drug
+# purple passion
+# Forget-Me Pill
+# Purple Passion
+# Sewage Fruit
+# Little Smoke 
+# Magic Mushrooms
+'''
+
 # create a Matcher
-matcher = Matcher(nlp.vocab)
+matcher = Matcher(nlp.vocab, validate=True)
 
 
 # Add the pattern to the matcher
-matcher.add("DRUG", None, pattern1)
+matcher.add("DRUG", None, pattern0)
+
 
 #################################################
 # Process texts and run the matcher
@@ -79,6 +104,7 @@ for doc in nlp.pipe(randomTexts):
         span = doc[start:end]  # The matched span
         print(entType, span.text)
 ##################################################
+
 
 TRAINING_DATA = []
 
