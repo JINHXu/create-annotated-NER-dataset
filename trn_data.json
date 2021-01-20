@@ -92,7 +92,23 @@
     [
         "I can\u2019t find much experience reports here so I wanted to know, to those people who use this amphetamine therapeutically and recreationally, how do you feel the \u201chigh\u201d? What is your recreational dose?\n\nI can tell from myself that Vyvanse is very euphoric in higher doses. I need 150-200mg for a recreational effect and 50mg for therapeutic reasons (ADD, impulsive). There is a long lasting amphetamine like euphoria which comes slow and fades away slowly; it\u2019s not an \u201cin your face drug\u201d, effects start after 30 minutes and last up to 12 hours in my experience.\n\nThe side effects are not as bad as those of Ritalin as an example. There is just a very light restlessness sometimes and the hands are cold. The heart rate is just slightly higher as normal. That\u2019s it from my experience. \n\nIt feels like MDMA because the speedy effect is not as strong as normal amphetamine and you feel very empathetic and can control conversations and understand people more. The body load can be described as tingling sensations all around your body. You just want to talk and socialize.\n\nIn therapeutic doses it\u2019s very effective for ADD symptoms, impulsive behavior is reduced and brain fog is gone; the head space is crystal clear.",
         {
-            "entities": []
+            "entities": [
+                [
+                    92,
+                    103,
+                    "DRUG"
+                ],
+                [
+                    389,
+                    400,
+                    "DRUG"
+                ],
+                [
+                    857,
+                    868,
+                    "DRUG"
+                ]
+            ]
         }
     ],
     [
@@ -370,6 +386,11 @@
                     "DRUG"
                 ],
                 [
+                    1049,
+                    1056,
+                    "DRUG"
+                ],
+                [
                     1451,
                     1455,
                     "DRUG"
@@ -386,7 +407,18 @@
     [
         "Alright this might sound weird as fuck. But I genuinely have had dreams about green and ecstasy, both times getting a weird kind of fuzzy body high. \n\nDream #1 \n\nWalking through my local town, I\u2019m smoking cigarettes with one of my friends and we get stopped by this guy in the middle of the street, he asks for a lighter. I hand him my lighter and he starts sparking a joint, I instantly begin to smell it and I swear to god I genuinely got high, like i\u2019m not even joking. I was laying down and felt stoned as fuck.\n\nDream #2 \n\nI\u2019m at a festival with my friend, same friend as Dream #1, and they\u2019re all taking ecstasy, so I just decide to take a pill and instantly I feel high, but it\u2019s exactly the same high as the one from Dream #1.\n\nThe high doesn\u2019t correlate with the usual high from the drug. It\u2019s basically like a fuzzy feeling throughout my whole body. It\u2019s not exactly pleasurable, just really fucking weird.\n\nHas anyone else ever experienced anything like this.",
         {
-            "entities": []
+            "entities": [
+                [
+                    88,
+                    95,
+                    "DRUG"
+                ],
+                [
+                    610,
+                    617,
+                    "DRUG"
+                ]
+            ]
         }
     ],
     [
@@ -577,6 +609,11 @@
         "I share most nights with a few lines of ketamine, a spliff and a few bong rips. With mates, I\u2019m always doing MDMA, amphetamine, cocaine, excessive amounts of alcohol, you name it. \n\nNot last night. All of our dealers are at a festival right now and the only thing we could sort was 5g of some real good weed. To my surprise, it was a great night. We all got pretty stoned from plenty of fat bong rips and a few spliffs; it just took me back to the old days. We ordered food and played Minecraft split screen for hours, it was so wholesome and I felt so in control. \n\nReally refreshing, definitely going to cut back on harder drugs and relax more, I just feel so much more alive and normal this morning.",
         {
             "entities": [
+                [
+                    115,
+                    126,
+                    "DRUG"
+                ],
                 [
                     128,
                     135,
@@ -896,7 +933,13 @@
     [
         "Hey all, just wondering if anyone has some knowledge/advice about lower end dosing of vyvanse and avoiding hormesis. I'm prescribed 30mg but I find it's too much, I feel zombie like and can't think. I've taken 15mg for quite a while which felt pretty good but I still found I had some negative effects so I switched to 10mg and have felt really good for about a week, but have started to feel weird and anxious on it. \n\nSo does anyone know what kinds of dosage amount might induce hormesis etc and what's a safe low dosage that would avoid that?\n\nAlso I'm 28, male, 76kg 181cm, if that helps\n\nEdit: when I say good, I mean relaxed and able rather than high or euphoric\n\nEdit2: read some convincing posts that low dose amphetamine sensitisation is a myth, please ignore",
         {
-            "entities": []
+            "entities": [
+                [
+                    718,
+                    729,
+                    "DRUG"
+                ]
+            ]
         }
     ],
     [
@@ -1228,7 +1271,13 @@
     [
         "I understand LSD and magic mushrooms differ regardless of inducing similar effects, and that shrooms tends to be less intense (depending on the dosage).  \n\n\nHowever these are typically drugs that may impact different people in different ways, and Id be interested in getting to know how they affect you personally.  \nIf you want me to be honest I've never actually tripped before, except on a **very low** dosage of psilocybin(shrooms).  \nI used to smoke weed a bit more often then I do now, though regardless of how high I've gotten in the past, I wouldn't necessarily label the experience as \"a trip\".  \n\n\nI've been researching drugs on the internet since I was in my later teens, though it's been a while since I've thought of it!  \n\n\n**PS:** Only answer the question if you're near positive you've taken legit LSD, rather than some other research chemical (such as 25i-nbome)  \n\n\nI'm pretty sure most people on this subreddit already understand the differences between the two. It typically extremely easy to research",
         {
-            "entities": []
+            "entities": [
+                [
+                    21,
+                    36,
+                    "DRUG"
+                ]
+            ]
         }
     ],
     [
@@ -1276,7 +1325,13 @@
     [
         "Okey so I have an uncle that got rid off addiction from painkillers like 3 year ago and I know that he has have back problems for year and i got caught with ampethamine like one week ago and he asked me if i could get my hands on some painkillers to help him with his back problem and hes not allowed perscription sience he was addicted to them before what The fuck should i do im so fucking qonfused and he also said that he dont care if i take amphetamine as long as im care ful and dont get caught with it and he told me ways to be more care ful and promised to not tell my mom about The deal and that he would not beat The fuck out of The guy so im confused what i should do",
         {
-            "entities": []
+            "entities": [
+                [
+                    446,
+                    457,
+                    "DRUG"
+                ]
+            ]
         }
     ],
     [
@@ -1652,7 +1707,13 @@
     [
         "For me it went\n16 years old: start getting drunk off my stepdads booze\n+ 6 months\nstart smoking nicotine\n+ 6 months\nstart smoking weed\n+ 2 months \nTry 2cb\n+ 1 month\nTry shrooms, ecstasy and dmt\nFrom weed to dmt in less than 4 months lol",
         {
-            "entities": []
+            "entities": [
+                [
+                    178,
+                    185,
+                    "DRUG"
+                ]
+            ]
         }
     ],
     [
@@ -1802,6 +1863,11 @@
         {
             "entities": [
                 [
+                    22,
+                    33,
+                    "DRUG"
+                ],
+                [
                     487,
                     502,
                     "DRUG"
@@ -1878,7 +1944,13 @@
     [
         "Currently in the process of trying to get my adhd under control, this means changing my meds quite a bit. So I have a bottle of untouched 18mg SLOW RELEASE ritalin that my meds got changed again before I even opened it, and was wondering really what I can do with it? \n\nOther than just save it for a rainy day or help friends out who need a study boost, I was was wondering if I could get any \u201cbenefit\u201d from the bottle?",
         {
-            "entities": []
+            "entities": [
+                [
+                    156,
+                    163,
+                    "DRUG"
+                ]
+            ]
         }
     ],
     [
@@ -1919,7 +1991,13 @@
     [
         "I cant find any information on this , anyone know if codeine pills will help for ecstasy comedown ?\nThanks",
         {
-            "entities": []
+            "entities": [
+                [
+                    81,
+                    88,
+                    "DRUG"
+                ]
+            ]
         }
     ],
     [
@@ -2063,7 +2141,13 @@
     [
         "I have taken adderall 20 mg xr for the past few days. My last dose was yesterday at 2 pm. It would a 11:30 right now in the afternoon. I feel really depleted, would it be safe to take tramodol now?\n\nYesterday I split the adderall in half. 12 mg at 6 am and 8 mg at 2pm.",
         {
-            "entities": []
+            "entities": [
+                [
+                    221,
+                    229,
+                    "DRUG"
+                ]
+            ]
         }
     ],
     [
@@ -2292,7 +2376,13 @@
     [
         "So i used to be prescribed 60mg of Vyvanse which was way too intense after 5 yrs of taking it- would make me sweaty, heart rate went up and i wouldn\u2019t eat at all. \n\nI was recently switched to 25mg of adderall and it has literally changed the way i see ADD medicine- i feel how I\u2019m supposed to. \n\nOne thing i noticed with both adderall and Vyvanse was that about an hour or 2 after taking either medication, like clockwork- i would need to use the restroom (to clarify, going number 2). \n\nI\u2019m pretty much wondering 2 things: 1.) is this common? And 2.) why did i previously think amphetamines  made users constipated? Thanks in advance!",
         {
-            "entities": []
+            "entities": [
+                [
+                    326,
+                    334,
+                    "DRUG"
+                ]
+            ]
         }
     ],
     [
@@ -2317,6 +2407,11 @@
         "I\u2019m prescribed adderall for adhd and I don\u2019t normally drink because I can\u2019t control my intake unless the situation calls for it. My gf parents are throwing a party and I know I won\u2019t drink to the point of embarrassment because of the situation. I was wondering if the adderall would null the effects of the alcohol to basically make it seem ineffective. I know to be careful with the amount I drink because I\u2019ll seem more sober than I actually am and when the adderall wears off it\u2019ll hit like a train if I drank too much. But basically does adderall kill the giddiness and euphoria of alcohol or just the negatives?",
         {
             "entities": [
+                [
+                    268,
+                    276,
+                    "DRUG"
+                ],
                 [
                     307,
                     314,
@@ -2403,6 +2498,16 @@
                 [
                     161,
                     165,
+                    "DRUG"
+                ],
+                [
+                    233,
+                    240,
+                    "DRUG"
+                ],
+                [
+                    322,
+                    329,
                     "DRUG"
                 ]
             ]

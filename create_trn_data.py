@@ -3,6 +3,7 @@ Author: Jinghua Xu
 Hornor Code: I pledge that the code repreesent my own work.
 Description: Create training data for NER from reddit posts/comments using patterns and SpaCy. Save training data to a file.
 '''
+
 import spacy
 from spacy.matcher import Matcher
 # from spacy.pipeline import EntityRuler
@@ -10,10 +11,7 @@ import json
 import sys
 import random
 
-############################################
-# Token-based Matching
-# https://spacy.io/usage/rule-based-matching
-############################################
+# Token-based Matching https://spacy.io/usage/rule-based-matching
 
 if len(sys.argv) < 2:
     sys.exit('Too few arguments, please speciify the input file')
@@ -48,15 +46,14 @@ randomTexts = random.sample(texts, n)
 # load English tokenizer, tagger, parser, NER and word vectors
 nlp = spacy.load("en_core_web_sm")
 
-######################################################
-# patterns to match more patterns tba
-######################################################
+# patterns
 
-# a pattern to match common drug names
 # link to commonly used drugs: https://www.drugabuse.gov/sites/default/files/Commonly-Used-Drugs-Charts_final_June_2020_optimized.pdf
 # list of common drug names all in lower case
-common_drug_names = ['alcohol', 'ayahuasca', 'cocaine', 'dimethyltriptamine', 'dmt', 'gamma-hydroxybutyrate', 'ghb', 'hallucinogens', 'heroin', 'ketamine', 'khat', 'kratom', 'lsd', 'marijuana',
+common_drug_names = ['ritalin', 'adderall', 'amphetamine', 'alcohol', 'ayahuasca', 'cocaine', 'dimethyltriptamine', 'dmt', 'gamma-hydroxybutyrate', 'ghb', 'hallucinogens', 'heroin', 'ketamine', 'khat', 'kratom', 'lsd', 'marijuana', 'ecstasy', 'mescaline', 'anabolic',
                      'mdma', 'peyote', 'methamphetamine', 'dextromethorphan', 'dxm', 'loperamide', 'pcp', 'opioids', 'psilocybin', 'flunitrazepam', 'rohypnol', 'salvia', 'anabolic', 'steroids', 'tabacco', 'nicotine']
+
+# a pattern to match common drug names
 # upper and lower case are always not diffeerentiated in reddit posts/comments, for example, 'LSD' often show as 'lsd'
 # the pattern will match all drug names whose lower case form is in the list common_drug_names
 pattern0 = [
@@ -66,33 +63,45 @@ pattern0 = [
     }
 ]
 
-'''
+
 # unlike ingredients, drug entities rarely show in NOUN-NOUN or ADJ-NOUN pairs, most drug names are single-token, i.e. rarely any durg name is a phrase, for example there is no "heroin cocaine"
 # though some street names of drugs may appear as phrase such as "Vitamine K"
-
+# according to experiments, adding street names generally improves the model performance
 
 # vatamine k, lady k, special k
-pattern1 = [{"LOWER": {'IN': ["vitamine", "lady", "special"]}, 'POS': 'NOUN'}, {"LOWER": "k"}]
+pattern1 = [{"LOWER": {'IN': ["vitamine", "lady", "special"]},
+             'POS': 'NOUN'}, {"LOWER": "k"}]
 # laughing gas
 pattern2 = [{"LOWER": "laughing"}, {"LOWER": "gas"}]
 # Cat Valium
 pattern3 = [{"LOWER": "cat"}, {"LOWER": "valium"}]
 # Date Rape Drug
+pattern4 = [{"LOWER": "date"}, {"LOWER": "rape"}, {"LOWER": "drug"}]
 # purple passion
+pattern5 = [{"LOWER": "purple"}, {"LOWER": "passion"}]
 # Forget-Me Pill
-# Purple Passion
-# Sewage Fruit
-# Little Smoke 
+pattern6 = [{"LOWER": "forget-me"}, {"LOWER": "pill"}]
+# # Sewage Fruit
+pattern7 = [{"LOWER": "sewage"}, {"LOWER": "fruit"}]
+# Little Smoke
+pattern8 = [{"LOWER": "little"}, {"LOWER": "smoke"}]
 # Magic Mushrooms
-'''
+pattern9 = [{"LOWER": "magic"}, {"LOWER": "mushrooms"}]
+# wicked x
+pattern10 = [{"LOWER": "wicked"}, {"LOWER": "x"}]
+# sacred mush
+pattern11 = [{"LOWER": "sacred"}, {"LOWER": "mush"}]
+# lope dope
+pattern12 = [{"LOWER": "lope"}, {"LOWER": "dope"}]
+
 
 # create a Matcher
 matcher = Matcher(nlp.vocab, validate=True)
 
 
 # Add the pattern to the matcher
-matcher.add("DRUG", None, pattern0)
-
+matcher.add("DRUG", None, pattern0, pattern1, pattern2, pattern3, pattern4, pattern5,
+            pattern6, pattern7, pattern8, pattern9, pattern10, pattern11, pattern12)
 
 #################################################
 # Process texts and run the matcher
@@ -120,7 +129,6 @@ for doc in nlp.pipe(randomTexts):
     TRAINING_DATA.append(training_example)
 
 # print(*TRAINING_DATA, sep="\n")
-
 
 # dump training data to JSON
 with open('trn_data.json', 'w') as jsonf:
