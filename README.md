@@ -1,5 +1,14 @@
 # NER on reddit posts/comments with Label Studio and SpaCy
 
+This repository stores an example workflow to create NER data in any intended domain/for general purposes from the ground up:
+
+- collect raw text data from Reddit using Google BigQuery
+- annotate data using [Label Studio](https://labelstud.io/)
+
+The example is shown with `DRUG` entities recognition in subreddit `drugs`, for customization, one can change to other subreeddits according to need.
+
+_For raw text data collection, it is also possible to collect tweets (in a specified domain or general domain) from Twitter through Twitter's developer portal, follow this [link](https://github.com/JINHXu/TwitterCrawler) or this [link](https://github.com/JINHXu/how-much-hate-with-china/tree/main/scripts/notebooks/get_data) to see examples of tweet collection using Twitter's API._
+
 ### Get Reddit Data with Google BigQuery
 
 subreddits: https://www.reddit.com/r/ListOfSubreddits/wiki/listofsubreddits <br>
