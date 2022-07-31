@@ -48,7 +48,9 @@ Semi-manual labeling training data:
 
 1. Create labeling tasks for Label Studio with `create_tasks.py`
 2. Create a Label Studio project `label-studio start ner_project --init`<br>
+
 set up config
+
 ```
 <View>
   <Labels name="label" toName="text">
@@ -58,9 +60,16 @@ set up config
   <Text name="text" value="$reddit"/>
 </View>
 ```
-3. Create a spaCy backend `model.py` and connect it to the server `label-studio-ml init spacy_backend --script /path/to/model.py`<br>
+
+3. Create a spaCy backend `model.py` and connect it to the server 
+
+`label-studio-ml init spacy_backend --script /path/to/model.py`<br>
+
 `label-studio-ml start spacy_backend`<br>
+
 *One might consider turning off VPN in case of any connection error that makes one's entire week miserable.*
+
 4. Start Front-end `label-studio start ner_project --ml-backends http://localhost:9090`
+
 5. Start Labeling!
 
